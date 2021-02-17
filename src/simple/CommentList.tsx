@@ -9,8 +9,9 @@ interface CommentListProps {
 export default function CommentList(props: CommentListProps) {
   return (
     <ul>
-      {props.comments.map((comment) => (
-        <li>
+      {props.comments.map((comment, idx) => (
+        // For simplicity, idx will do it for now...
+        <li key={idx}>
           <Comment comment={comment} />
         </li>
       ))}
