@@ -19,8 +19,10 @@ export default function CommentForm(props: CommentFormProps) {
   }
 
   const handleClick = () => {
-    props.onSubmit(text)
-    setText('')
+    if (value !== '') {
+      props.onSubmit(value)
+      setValue('')
+    }
   }
 
   return (
