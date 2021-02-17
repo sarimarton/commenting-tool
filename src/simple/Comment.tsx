@@ -22,12 +22,19 @@ export default function Comment(props: CommentProps) {
   }
 
   return (
-    <div>
+    <div className="pt-2 pb-2">
       <div>{props.comment.text}</div>
-      <a onClick={handleReply}>Reply</a>
-      <br />
-      {replyVisible && <CommentForm onSubmit={handleSubmit} />}
-      <CommentList comments={comments} />
+      <button onClick={handleReply} className="text-blue-500">
+        Reply
+      </button>
+      {replyVisible && (
+        <div className="bg-blue-100 pt-1 px-2">
+          <CommentForm onSubmit={handleSubmit} />
+        </div>
+      )}
+      <div className="border-l-2 pl-4">
+        <CommentList comments={comments} />
+      </div>
     </div>
   )
 }

@@ -12,13 +12,13 @@ export default function CommentForm(props: CommentFormProps) {
     ref.current!.focus()
   }, [])
 
-  const [text, setText] = useState('')
+  const [value, setValue] = useState('')
 
-  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setText(event.target.value)
+  const onChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setValue(event.target.value)
   }
 
-  const handleClick = () => {
+  const onClick = () => {
     if (value !== '') {
       props.onSubmit(value)
       setValue('')
@@ -26,10 +26,14 @@ export default function CommentForm(props: CommentFormProps) {
   }
 
   return (
-    <>
-      <textarea ref={ref} value={text} onChange={handleChange}></textarea>
-      <br />
-      <button onClick={handleClick}>Add Comment</button>
-    </>
+    <div className="py-2">
+      <textarea
+        {...{ ref, value, onChange }}
+        className="inline-block border p-2 w-full"
+      ></textarea>
+      <button onClick={onClick} className="text-blue-500">
+        Add Comment
+      </button>
+    </div>
   )
 }

@@ -6,12 +6,14 @@ import type { Comment } from './types'
 export default function SimpleCommentTool() {
   const [comments, setComments] = useState<Comment[]>([])
 
+  const handleSubmit = (text: string) => {
+    setComments([...comments, { text, comments: [] }])
+  }
+
   return (
-    <div>
-      <CommentForm
-        onSubmit={(text) => setComments([...comments, { text, comments: [] }])}
-      />
+    <>
+      <CommentForm onSubmit={handleSubmit} />
       <CommentList comments={comments} />
-    </div>
+    </>
   )
 }
