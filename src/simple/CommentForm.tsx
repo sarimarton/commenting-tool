@@ -1,4 +1,5 @@
-import React, { useLayoutEffect, useRef, useState } from 'react'
+import React, { useState } from 'react'
+import { useFocusedRef } from './util'
 
 interface CommentFormProps {
   onSubmit: (text: string) => void
@@ -6,11 +7,7 @@ interface CommentFormProps {
 
 export default function CommentForm(props: CommentFormProps) {
   // Focus the textarea when it appears
-  const ref = useRef<HTMLTextAreaElement>(null)
-  useLayoutEffect(() => {
-    // We can assume that the textarea exists
-    ref.current!.focus()
-  }, [])
+  const ref = useFocusedRef<HTMLTextAreaElement>()
 
   const [value, setValue] = useState('')
 
