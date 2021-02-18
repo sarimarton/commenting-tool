@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useFocusedRef } from './util'
+import { useFocusedRef } from 'src/simple/util'
 
 interface CommentFormProps {
   onSubmit: (text: string) => void

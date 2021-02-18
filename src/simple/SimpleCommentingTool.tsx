@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import CommentForm from './CommentForm'
-import CommentList from './CommentList'
-import type { Comment } from './types'
+import CommentForm from './components/comment/CommentForm'
+import CommentList from './components/comment/CommentList'
+import type { Comment } from './components/comment/types'
 
 export default function SimpleCommentTool() {
   const [comments, setComments] = useState<Comment[]>([])
