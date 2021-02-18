@@ -1,5 +1,9 @@
 import React from 'react'
-import SimpleCommentingTool from './simple/SimpleCommentingTool'
+import CommentingToolSimple from './simple/CommentingToolSimple'
+import CommentingToolRedux from './redux/CommentingToolRedux'
+import store from 'src/redux/store/store'
+import { Provider } from 'react-redux'
+
 import './index.css'
 
 function App() {
@@ -11,9 +15,16 @@ function App() {
           <h2 className="text-xl mb-2">
             Simple version (recursive local state)
           </h2>
-          <SimpleCommentingTool />
+          <CommentingToolSimple />
         </div>
-        <div>{ /* placeholder, maybe for a Redux version? */ }</div>
+        <div>
+          <h2 className="text-xl mb-2">
+            Redux version (flat orthogonal state)
+          </h2>
+          <Provider store={store}>
+            <CommentingToolRedux />
+          </Provider>
+        </div>
       </div>
     </div>
   )
