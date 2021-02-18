@@ -1,25 +1,26 @@
-# New Project
+# Commenting Tool
 
-> ✨ Bootstrapped with Create Snowpack App (CSA).
+This app contains 2 versions of the assignment, in a single app, side-by-side.
 
-## Available Scripts
+The first version was made for the sake of simplicity. It only uses plain React useState hooks.
 
-### npm start
+The second version uses Redux with strongly typed hooks and middleware. It better scales in the long run IMO, with enough awareness on the selectors of course. I didn't want to be opinionated with other directions, but if I wanted a reactive state system, I'd choose Recoil, and if I faced more complex behaviors, I'd go with XState.
 
-Runs the app in the development mode.
-Open http://localhost:8080 to view it in the browser.
+#### Stack:
+- Snowpack
+- React
+- Redux
+- Tailwind
 
-The page will reload if you make edits.
-You will also see any lint errors in the console.
+#### Installation
+  `npm install`
 
-### npm run build
+#### Run
+  `npm start`
 
-Builds a static copy of your site to the `build/` folder.
-Your app is ready to be deployed!
+  It runs the app in the development mode. Open http://localhost:8080 to view it in the browser.
 
-**For the best production performance:** Add a build bundler plugin like "@snowpack/plugin-webpack" to your `snowpack.config.js` config file.
+#### Build
+  `npm run build`
 
-### npm test
-
-Launches the application test runner.
-Run with the `--watch` flag (`npm test -- --watch`) to run in interactive watch mode.
+Builds a static copy of the app to the `build/` folder.
