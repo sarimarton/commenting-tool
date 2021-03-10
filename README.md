@@ -1,5 +1,7 @@
 # Commenting Tool
 
+[Open in CodeSandbox](https://codesandbox.io/s/github/sarimarton/commenting-tool)
+
 This app contains 2 versions of the assignment, in a single app, side-by-side.
 
 The first version was made for the sake of simplicity. It only uses plain React useState hooks.
