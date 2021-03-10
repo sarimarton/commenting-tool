@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useFocusedRef } from 'src/simple/util'
+import { useFocusedRef } from 'src/redux/util'
 import type { CommentId } from 'src/redux/store/slices/comments'
 import { useDispatch } from 'src/redux/store/store'
 
